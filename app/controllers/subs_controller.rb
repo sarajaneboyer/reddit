@@ -1,5 +1,5 @@
 class SubsController < ApplicationController
-  before_action :set_sub, only: [:show, :edit, :update, :create, :destroy]
+  before_action :set_sub, only: [:show, :edit]
   def index
     @sub = Sub.all
   end
@@ -14,8 +14,21 @@ class SubsController < ApplicationController
   def edit
   end
 
+  def create
+    @sub = Sub.new(sub_params)
+    if @sub.save
+      redirect_to subs_path
+    else
+      render :new
+    end 
+  end
+
   private
   def set_sub
     @sub = Sub.find(params[:id])
+  end
+
+  def sub_params
+    params.require(:sub).permit(:name)
   end
 end
