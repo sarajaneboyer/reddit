@@ -1,7 +1,14 @@
 <h1><font size = +16>All Subs</font></h1><hr />
-<h2><%= link_to 'Create New Sub', new_sub_path %></h2><hr />
-<% @sub.each do |sub| %>
-  <h1><%= sub.name %></h1>
-  <h4><%= link_to "View #{sub.name}", sub_path(sub) %></h4>
-  <h4><%= link_to "Edit #{sub.name}", edit_sub_path(sub) %></h4>
+<%# <h2><%= link_to 'Create New Sub', new_sub_path %></h2><hr />
+<%# <% @sub.each do |sub| %>
+  <%# <h1><%= sub.name %></h1> %>
+  <%# <h4><%= link_to "View Topics", sub_topics_path(sub) %></h4> %>
+  <%# <h4><%= link_to "Edit #{sub.name}", edit_sub_path(sub) %></h4> %>
+  <%# <% end %> 
+
+  <h4><%= @sub.name %>
+
+  <% @topics.each do |topic| %>
+    <p><%= topic.name %></p>
+    <p><%= topic.bdy %></p>
   <% end %>
