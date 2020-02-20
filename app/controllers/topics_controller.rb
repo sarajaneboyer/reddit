@@ -22,7 +22,7 @@ class TopicsController < ApplicationController
   def create
     @topic = @sub.topics.new(topics_params)
     if @topic.save
-      redirect_to sub_topic_path(@sub, @topic)
+      redirect_to sub_topic_paath(@sub, @topic)
       #could also be redirect_to [@sub, @topic]
     else
       render :new
