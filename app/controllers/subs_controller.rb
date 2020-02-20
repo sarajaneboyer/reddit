@@ -8,6 +8,7 @@ class SubsController < ApplicationController
   end
 
   def new
+    @sub = Sub.new 
   end
 
   def edit

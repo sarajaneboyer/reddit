@@ -1,2 +1,6 @@
-<h1>Subs#new</h1>
-<p>Find me in app/views/subs/new.html.erb</p>
+<h1>Create a New Sub</h1>
+<%= form_for @sub do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field  :name %>
+<%= f.submit %>
+<% end %>
