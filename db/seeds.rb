@@ -9,4 +9,3 @@
 Sub.create(name:'Javascript')
 Sub.create(name:'HTML')
 Sub.create(name:'CSS')
-Sub.create(name:'Python')
