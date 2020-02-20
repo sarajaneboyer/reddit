@@ -3,4 +3,5 @@
 <% @sub.each do |sub| %>
   <h1><%= sub.name %></h1>
   <h4><%= link_to "View #{sub.name}", sub_path(sub) %></h4>
+  <h4><%= link_to "Edit #{sub.name}", edit_sub_path(sub) %></h4>
   <% end %>
