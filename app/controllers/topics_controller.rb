@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
+  before_action :set_sub, :only [:show, :edit]
   def index
-    @sub = Sub.find(params[:sub_id])
     @topics = @sub.topics
   end
 
@@ -15,6 +15,8 @@ class TopicsController < ApplicationController
   end
 
   def edit
+    @topic = Topic.find(params[:id])
+    render partial: 'form'
   end
 
   def create
@@ -27,6 +29,19 @@ class TopicsController < ApplicationController
     end
   end
 
+  def destroy
+    @topic = Topic.find(params[:id])
+    topic.destroy
+    redirect_to sub_topic_path(@sub)
+  end
+
+  def update
+    @topic = Topic.find(params[:id])
+    if (@topic.update(topics_params))
+      redirect_to [@sub, @topic]
+    else
+      render :edit
+    end
 
 private
 
