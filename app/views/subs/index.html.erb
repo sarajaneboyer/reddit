@@ -1,5 +1,5 @@
-<h1>Subs#index</h1>
-<$ @sub.each do |sub| %>
+<h1>All Subs</h1>
+<% @sub.each do |sub| %>
   <h1><%= sub.name %></h1>
-  <%= link_to 'View #{sub.name}', sub_path(sub) %>
+  <%= link_to "View #{sub.name}", sub_path(sub) %>
   <% end %>
